@@ -1,0 +1,151 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Аренда</title>
+</head>
+<body>
+    <center>
+        <h1>Аренда</h1>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>Id</th>
+                <th>Клиент</th>
+                <th>Тренерские услуги</th>
+                <th>Дата</th>
+                <th>Время </th>
+                <th>Спортивное оборудование</th>
+                <th>Номер карты</th>
+                <th>Срок действия карты</th>
+                <th>Проверочный код карты</th>
+                <th>Сумма</th>
+                <th>Действия</th>
+            </tr>
+            @foreach (var v in ViewBag.Purchases)
+            {
+                <tr>
+                    <td>@v.Id</td>
+                    <td>@v.Client.Name @v.Client.Surname</td>
+                    <td>@v.Coach.Name</td>
+                    <td>@v.Date</td>
+                    <td>@v.TimeStart.Period - @v.TimeEnd.Period</td>
+                    <td>@v.SportsEquipment</td>
+                    <td>@v.CardNumber</td>
+                    <td>@v.CardDate</td>
+                    <td>@v.CardCVC</td>
+                    <td>@v.Sum рублей</td>
+                    <td>
+                        <a href="/Admin/RemovePurchase/@v.Id" onclick="return confirm('Действительно удалить?');">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </table>
+        <h3>Поиск</h3>
+        <table>
+            <tr>
+                <td>
+                    По имени и фамилии клиента
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseNameSurname">
+                        <input type="text" name="Name" placeholder="Имя" required>
+                        <input type="text" name="Surname" placeholder="Фамилия" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По ФИО тренера
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseCoachName">
+                        <input type="text" name="Name" placeholder="Фамилия Имя Отчество" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По дате
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseDate">
+                        <input type="text" name="Date" placeholder="XX/XX/XXXX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По времени
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseTime">
+                        <input type="text" name="Time" placeholder="XX.XX - XX.XX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По дате и времени
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseDateTime">
+                        <input type="text" name="Time" placeholder="XX.XX - XX.XX" required>
+                        <input type="text" name="Time" placeholder="XX/XX/XXXX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По номеру карты
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseCardNumber">
+                        <input type="text" name="CardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По имени и фамилии клиента и дате
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseNameSurnameDate">
+                        <input type="text" name="Name" placeholder="Имя" required>
+                        <input type="text" name="Surname" placeholder="Фамилия" required>
+                        <input type="text" name="Date" placeholder="XX/XX/XXXX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    По ФИО тренера и дате
+                </td>
+                <td>
+                    <form method="post" action="/Admin/SearchPurchaseCoachNameDate">
+                        <input type="text" name="Name" placeholder="Фамилия Имя Отчество" required>
+                        <input type="text" name="Date" placeholder="XX/XX/XXXX" required>
+                        <input type="submit" value="Искать">
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <h3><a href="/Admin/Download">Загрузить данные на компьютер</a></h3>
+        <h1>
+            <a href="/Admin/Index">На главную</a>
+        </h1>
+        <a href="/Admin/RemovePurchases" onclick="return confirm('Действительно удалить?');">Удалить ВСЕ аренды</a>
+    </center>
+</body>
+</html>

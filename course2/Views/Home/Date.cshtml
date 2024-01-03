@@ -1,0 +1,63 @@
+﻿@{
+Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../../Content/favicon.ico" type="image/x-icon">
+    <title>Дата</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <script>
+        $(function () { $('#datetimepicker1').datetimepicker({ format: 'DD/MM/YYYY', locale: 'ru' }); });
+        $(function () { $('#datetimepicker1').data("DateTimePicker").minDate(moment()); });
+        $(function () { $('#datetimepicker1').data("DateTimePicker").maxDate(moment('01-11-2020', 'DD.MM.YYYY')); });
+    </script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <link href="~/Content/date.css" rel="stylesheet" />
+    <script>
+        $(function () { $("#date").mask("99/99/9999"); });
+    </script>
+</head>
+<body>
+    <h1>Давайте начнём!</h1>
+    <form method="post" action="/Home/Time">
+        <table id="tbl">
+            <tr>
+                <td class="tab">Дата</td>
+                <td>
+                    <div class="form-group">
+                        <div class="input-group" id="datetimepicker1">
+                            <input type="text" class="form-control" name="Date" id="date" required placeholder="XX/XX/XXXX">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="tab">Тренерские услуги </td>
+                <td>
+                    <select name="Coach" required>
+                        @foreach (var b in ViewBag.Coaches)
+                        {
+                            <option class="opt">@b.Name</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <center>
+            <input type="submit" value="Далее">
+            <a href="/Home/Index" id="cancel"> Отмена</a>
+        </center>
+    </form>
+</body>
+</html>

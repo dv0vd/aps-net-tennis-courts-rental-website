@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Поиск</title>
+</head>
+<body>
+    <center>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Id</th>
+                <th>Клиент</th>
+                <th>Тренерские услуги</th>
+                <th>Дата</th>
+                <th>Время </th>
+                <th>Спортивное оборудование</th>
+                <th>Номер карты</th>
+                <th>Срок действия карты</th>
+                <th>Проверочный код карты</th>
+                <th>Сумма</th>
+                <th>Действия</th>
+            </tr>
+            @foreach (var v in ViewBag.Purchases)
+            {
+        <tr>
+            <td>@v.Id</td>
+            <td>@v.Client.Name @v.Client.Surname</td>
+            <td>@v.Coach.Name</td>
+            <td>@v.Date</td>
+            <td>@v.TimeStart.Period - @v.TimeEnd.Period</td>
+            <td>@v.SportsEquipment</td>
+            <td>@v.CardNumber</td>
+            <td>@v.CardDate</td>
+            <td>@v.CardCVC</td>
+            <td>@v.Sum</td>
+            <td>
+                <a href="/Admin/RemovePurchase/@v.Id" onclick="return confirm('Действительно удалить?');">
+                    Удалить
+                </a>
+            </td>
+        </tr>
+            }
+        </table>
+        <h1>
+            <a href="/Admin/Purchases">Назад</a>
+        </h1>
+        <h1>
+            <a href="/Admin/Index">На главную</a>
+        </h1>
+    </center>
+</body>
+</html>

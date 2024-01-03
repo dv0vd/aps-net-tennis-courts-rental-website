@@ -1,0 +1,177 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Главная </title>
+    <link rel="icon" href="../../Content/favicon.ico" type="image/x-icon">
+    <link href="~/Content/index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () { $('a[href^="#"]').click(function () { var target = $(this).attr('href'); $('html, body').animate({ scrollTop: $(target).offset().top }, 1500); return false; }); });
+    </script>
+</head>
+<body>
+    <div id="center">
+        <div id="first_block">
+            <div id="logo">
+                <img src="../../Content/2000px-Tennis_pictogram.png" alt="Логотип">
+                <div id="heading1">
+                    БЕЛГОРОДСКИЙ <br> ТЕННИСНЫЙ <br> КЛУБ
+                </div>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="#about">О НАС</a>
+                    </li>
+                    <li>
+                        <a href="#coaches">ТРЕНЕРСКИЙ СОСТАВ</a>
+                    </li>
+                    <li>
+                        <a href="#location">МЕСТОПОЛОЖЕНИЕ</a>
+                    </li>
+                    <li>
+                        <a href="#contacts">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="heading2">
+                ОБРАЗ ЖИЗНИ, <br> КОТОРЫЙ <br> ЗАРЯЖАЕТ <br> ЭНЕРГИЕЙ!
+            </div>
+            <div id="line">
+                <a href="/Admin/Index"></a>
+            </div>
+            <p>НАЧНИ ПРЯМО <br> СЕЙЧАС! </p>
+            <a id="order_court" target="_blank" href="/Home/Date">Заказать корт</a>
+        </div>
+        <div id="about">
+            <img id="nadal" src="../../Content/nadal.png">
+            <h1> О НАС </h1>
+            <div class="all">
+                <input checked type="radio" name="respond" id="desktop">
+                <article id="slider">
+                    <input checked type="radio" name="slider" id="switch1">
+                    <input type="radio" name="slider" id="switch2">
+                    <input type="radio" name="slider" id="switch3">
+                    <input type="radio" name="slider" id="switch4">
+                    <input type="radio" name="slider" id="switch5">
+                    <div id="slides">
+                        <div id="overflow">
+                            <div class="image">
+                                <article><img src="../../Content/1.jpg"></article>
+                                <article><img src="../../Content/2.jpg"></article>
+                                <article><img src="../../Content/3.jpg"></article>
+                                <article><img src="../../Content/4.jpg"></article>
+                                <article><img src="../../Content/5.jpg"></article>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="controls">
+                        <label for="switch1"></label>
+                        <label for="switch2"></label>
+                        <label for="switch3"></label>
+                        <label for="switch4"></label>
+                        <label for="switch5"></label>
+                    </div>
+                    <div id="active">
+                        <label for="switch1"></label>
+                        <label for="switch2"></label>
+                        <label for="switch3"></label>
+                        <label for="switch4"></label>
+                        <label for="switch5"></label>
+                    </div>
+                </article>
+            </div>
+            <table>
+                <tr>
+                    <td> <span>4</span> <br> травяных корта </td>
+                    <td> <span>1000+</span><br> посетителей в месяц </td>
+                    <td> <img src="../../Content/kisspng-brooklyn-boulders-logo-business-climbing-boulderin-no-cost-5b100379291336.9752845815277761211683.png"> <br> Бесплатная парковка</td>
+                    <td> <img src="../../Content/kisspng-brooklyn-boulders-logo-business-climbing-boulderin-no-cost-5b100379291336.9752845815277761211683.png"> <br> Бесплатные спортивные сооружения</td>
+                </tr>
+            </table>
+        </div>
+        <div id="coaches">
+            <h1>ТРЕНЕРСКИЙ СОСТАВ</h1>
+            <table>
+                <tr>
+                    <td>
+                        <img src="../../Content/IMG_20170806_152056.jpg" class="photo" alt="Давыдов">
+                        Давыдов Вячеслав Олегович
+                    </td>
+                    <td>
+                        <img src="../../Content/IMG_20180626_1401381.jpg" class="photo" alt="Бубнов">
+                        Бубнов Сергей Владимирович
+                    </td>
+                    <td>
+                        <img src="../../Content/72353.png" class="photo" alt="Виняр">
+                        Виняр Павел Андреевич
+                    </td>
+                    <td>
+                        <img src="../../Content/4325.png" class="photo" alt="Виняр">
+                        Виняр Елизавета Юрьевна
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../../Content/534.Png" class="photo" alt="Кобзарь">
+                        Кобзарь Егор Олегович
+                    </td>
+                    <td>
+                        <img src="../../Content/2018-09-20-08.24.png" class="photo" alt="Луценко">
+                        Луценко Нелли Сергеевна
+                    </td>
+                    <td>
+                        <img src="../../Content/пакв1.png" class="photo" alt="Мартыненко">
+                        Мартыненко Михаил Валентинович
+                    </td>
+                    <td>
+                        <img src="../../Content/coach1.jpg" class="photo" alt="Рябков">
+                        Рябков Павел Александрович
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <img src="../../Content/0000180485_cdwdmh3r.jpg" class="photo" alt="Жукова">
+                        Жукова Мария Андреевна
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="contacts">
+            <h1>КОНТАКТЫ</h1>
+            <div id="container">
+                <div id="bubnov">
+                    <img src="../../Content/IMG_20180626_1401381.jpg" class="photo" alt="Бубнов">
+                    <div class="information">
+                        <p> Бубнов Сергей Владимирович<p>
+                            <img src="../../Content/phone-802177_12801.png" class="phone" alt="Логотип">
+                        <p> +X-XXX-XXX-XX-XX<p>
+                    </div>
+                </div>
+                <div id="me">
+                    <img src="../../Content/IMG_20170806_152056.jpg" class="photo" alt="Давыдов">
+                    <div class="information">
+                        <p> Давыдов Вячеслав Олегович<p>
+                            <img src="../../Content/phone-802177_12801.png" class="phone" alt="Логотип">
+                            <img src="../../Content/telegram_icon-icons.com_720551.png" class="phone" alt="Логотип">
+                            <img src="../../Content/whatsapp_icon-icons.com_720541.png" class="phone" alt="Логотип">
+                            <img src="../../Content/viber_icon-icons.com_720201.png" class="phone" alt="Логотип">
+                        <p> +7-951-158-68-26<p>
+                            <img src="../../Content/logo-1162901_19201.png" id="email_logo" alt="Логотип">
+                        <p> fck3135@gmail.com<p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            С РАДОСТЬЮ ЖДЁМ ВАС!
+            <a id="order_court" target="_blank" href="/Home/Date">Заказать корт</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/Content/ok.css" rel="stylesheet" />
+        <title>Урааа!</title>
+        <link rel="icon" href="../../Content/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <h1>Оплата прошла успешно!</h1>
+        <h2>Ваши данные</h2>
+        <table>
+            <tr>
+                <td>Имя</td>
+                <td>@ViewBag.Name</td>
+            </tr>
+            <tr>
+                <td>Фамилия</td>
+                <td>@ViewBag.Surname</td>
+            </tr>
+            <tr>
+                <td>Номер телефона</td>
+                <td>@ViewBag.Phone</td>
+            </tr>
+            <tr>
+                <td>Дата аренды</td>
+                <td>@ViewBag.Date</td>
+            </tr>
+            <tr>
+                <td>Время аренды</td>
+                <td>@ViewBag.Time</td>
+            </tr>
+            <tr>
+                <td>Тренерские услуги</td>
+                <td>@ViewBag.Coach</td>
+            </tr>
+            <tr>
+                <td>Стоимость</td>
+                <td>@ViewBag.Sum руб.</td>
+            </tr>
+            <tr>
+                <td>Дата оформления покупки</td>
+                <td>@ViewBag.Today</td>
+            </tr>
+        </table>
+        <h2>Пожалуйста, не опаздывайте!</h2>
+        <h3>По всем вопросам звоните: <br> +79051704620 - Бубнов Сергей Владимирович <br> +79511586826 - Давыдов Вячеслав Олегович </h3>
+        <h1>Спасибо, что Вы с нами!</h1>
+        <center>
+            <a href="/Home/Index"> На главную</a>
+            <a href="javascript:(print());">Распечатать</a>
+        </center>
+    </body>
+</html>

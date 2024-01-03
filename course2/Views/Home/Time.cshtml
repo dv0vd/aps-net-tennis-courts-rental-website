@@ -1,0 +1,36 @@
+﻿
+@{
+Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="../../Content/favicon.ico" type="image/x-icon">
+    <link href="~/Content/date.css" rel="stylesheet" />
+    <link href="~/Content/time.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <title>Время</title>
+</head>
+    <body>
+        <h1>Осталось ещё чуть-чуть...</h1>
+        <p>На <u><b>@ViewBag.Date</b></u> доступно следующее время:</p>
+        <form method="post" action="/Home/OrderDetails">
+            <center>
+                <select name="Time">
+                    @foreach (var p in ViewBag.Periods)
+                    {
+                        <option>@p</option>
+                    }
+                </select>
+            </center>
+            <center>
+                <input type="submit" value="Далее">
+                <a href="/Home/Date" id="cancel"> Назад</a>
+                <a href="/Home/Index" id="cancel"> Отмена</a>
+            </center>
+            <input type="text" name="Date" hidden value="@ViewBag.Date">
+            <input type="text" name="Coach" hidden value="@ViewBag.Coach">
+        </form>
+    </body>
+</html>

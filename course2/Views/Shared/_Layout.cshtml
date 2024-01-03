@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <meta charset="utf-8">
+    <title>ОПЛАТА</title>
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    @RenderBody()
+    <form id="card">
+        <table>
+            <tr>
+                <td>Номер карты</td>
+                <td>
+                    <input type="text" id="cardNum" required placeholder="XXXX XXXX XXXX XXXX">
+                    <script>
+                        $(function () { $("#cardNum").mask("9999 9999 9999 9999"); });
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Срок действия карты</td>
+                <td>
+                    <input type="text" required id="cardDate" placeholder="XX/XX">
+                    <script>
+                        $(function () { $("#cardDate").mask("99/99"); });
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Проверочный код карты <br> (3 цифры на обороте карты)</td>
+                <td>
+                    <input type="text" placeholder="CVC" required id="cardCVC" />
+                    <script>
+                        $(function () { $("#cardCVC").mask("999"); });
+                    </script>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Оплатить">
+        <a href="/Home/OrderDetails" id="cancel"> Назад</a>
+        <a href="/Home/Index" id="cancel"> Отмена</a>
+    </form>
+
+
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

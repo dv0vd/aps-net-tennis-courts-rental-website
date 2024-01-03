@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Тренера</title>
+</head>
+<body>
+    <center>
+        <h1>Тренера</h1>
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th>Id</th>
+                <th>ФИО</th>
+                <th colspan="2">Действия</th>
+            </tr>
+            @foreach (var f in ViewBag.Coaches)
+            {
+                <tr>
+                    <td>@f.Id</td>
+                    <td>@f.Name</td>
+                    <td>
+                        @if (f.Working)
+                        {
+                            <a href="/Admin/HideCoach/@f.Id">Приостановить работу</a>
+                        }
+                        else
+                        {
+                            <a href="/Admin/ShowCoach/@f.Id">Продолжить работу</a>
+                        }
+                    </td>
+                    <td>
+                        <a href="/Admin/RemoveCoach/@f.Id" onclick="return confirm('Действительно удалить?');">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </table>
+        <table>
+            <tr>
+                <td>
+                    Добавить тренера
+                </td>
+                <td>
+                    <form method="post" action="/Admin/AddCoach">
+                        <input type="text" name="Name" placeholder="ФИО тренера" required>
+                        <input type="submit" value="Добавить">
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <h1>
+            <a href="/Admin/Index">На главную</a>
+        </h1>
+        <a href="/Admin/RemoveCoaches" onclick="return confirm('Действительно удалить?');">Удалить ВСЕХ тренеров</a>
+    </center>
+</body>
+</html>

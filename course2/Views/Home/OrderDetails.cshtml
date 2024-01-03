@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="../../Content/favicon.ico" type="image/x-icon">
+        <link href="~/Content/orderdetails.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+        <script>
+            $(function () { $("#phone").mask("+7-999-999-99-99"); });
+        </script>
+        <script>
+            $(function () { $("#cardNum").mask("9999 9999 9999 9999"); });
+        </script>
+        <script>
+            $(function () { $("#cardDate").mask("99/99"); });
+        </script>
+        <script>
+            $(function () { $("#cardCVC").mask("999"); });
+        </script>
+        <title> Оплата </title>
+    </head>
+    <body>
+        <h1>Последний шаг!</h1>
+        <P>
+            Стоимость аренды корта без тренера - <u>300 руб/час</u>, с тренером - <u>1000 руб/час</u>. Спортивное оборудование предоставляется <u><b>бесплатно</b></u>.
+        </P>
+        <form method="post" action="/Home/Payment">
+            <table id="tbl">
+                <tr>
+                    <td>Имя </td>
+                    <td>
+                        <input type="text" name="Name" required placeholder="Ваше имя" class="form">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Фамилия </td>
+                    <td>
+                        <input type="text" name="Surname" required placeholder="Ваша фамилия" class="form">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Номер телефона </td>
+                    <td>
+                        <input type="text" name="Phone" required id="phone" placeholder="+7-XXX-XXX-XX-XX" class="form">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Спортивное оборудование </td>
+                    <td>
+                        <input type="checkbox" name="SportsEquipment" value="true" id="cb">
+                        <label for="cb"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Номер карты</td>
+                    <td>
+                        <input type="text" name="CardNumber" id="cardNum" required placeholder="XXXX XXXX XXXX XXXX" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Срок действия карты</td>
+                    <td>
+                        <input autocomplete="off" type="text" name="CardDate" required id="cardDate" placeholder="XX/XX">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Проверочный код карты <br> (3 цифры на обороте карты)</td>
+                    <td>
+                        <input autocomplete="off" type="text" placeholder="XXX" name="CardCVC" required id="cardCVC" />
+                    </td>
+                </tr>
+            </table>
+            <center>
+                <input type="submit" value="Оплатить">
+                <a href="/Home/Date" id="cancel"> Назад</a>
+                <a href="/Home/Index" id="cancel"> Отмена</a>
+            </center>
+            <input type="text" hidden name="Coach" value="@ViewBag.Coach">
+            <input type="text" hidden name="Date" value="@ViewBag.Date">
+            <input type="text" hidden name="TimeStartId" value="@ViewBag.TimeStartId">
+            <input type="text" hidden name="TimeEndId" value="@ViewBag.TimeEndId">
+            <input type="text" hidden name="Time" value="@ViewBag.Time">
+        </form>
+    </body>
+</html>

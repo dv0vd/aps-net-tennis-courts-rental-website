@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Вход</title>
+    </head>
+    <body>
+        <center>
+            <h1>Если Вы зашли на эту страницу случайно, то вернитесь на главную!</h1>
+            <h2>
+                <a href="/Home/Index">На главную</a>
+            </h2>
+            <h1>Только для администратора!</h1>
+            <form method="post" action="/Home/CheckingLogin">
+                <label for="password">Пароль</label>
+                <input type="password" autocomplete="off" name="Password" required />
+                <input type="submit" value="ВОЙТИ" />
+            </form>
+        </center>
+    </body>
+</html>

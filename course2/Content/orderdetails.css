@@ -1,0 +1,110 @@
+﻿body {
+    background-color: green;
+    font-family: Arial, non-serif;
+    width: 900px;
+    margin: 0 auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+h1 {
+    color: yellow;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+#cancel {
+    text-decoration: none;
+    margin: 0 auto;
+    background-color: red;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 35px;
+    font-size: 30px;
+    margin: 10px;
+}
+
+input[type=text]{
+    width: 100%;
+    color: black;
+    background-color: yellow;
+    font-weight: bold;
+    font-style: italic;
+    margin: 5px 0;
+    padding: 10px;
+    border: 3px solid yellow;
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+    input[type=text]:hover{
+        border: 3px solid blue;
+    }
+
+#tbl{
+    font-size: 25px;
+    color: white;
+    padding: 0 20px;
+    margin: 0 50px;
+}
+
+#cancel:hover {
+    background-color: white;
+    color: red;
+}
+
+input[type=submit] {
+    text-decoration: none;
+    color: green;
+    margin: 0 auto;
+    background-color: yellow;
+    margin: 10px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 3px solid yellow;
+    font-size: 30px;
+}
+
+    input[type=submit]:hover {
+        background-color: white;
+        color: green;
+        border: 3px solid white;
+    }
+
+input[type=checkbox]{
+    display: none;
+}
+
+label:before {
+    content: " ";
+    width: 35px;
+    height: 35px;
+    background-color    : yellow;
+    display: inline-block;
+}
+
+label:hover {
+    outline: solid blue 3px;
+}
+
+input:checked + label:before {
+    content: "X";
+    font-weight: bold;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    color: black;
+}
+
+input:disabled + label:before {
+    background-color: yellow;
+}
